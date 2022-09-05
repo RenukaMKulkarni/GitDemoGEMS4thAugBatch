@@ -1,0 +1,313 @@
+
+renuka_kulkarni@NGL000018 MINGW64 ~
+$ git version
+git version 2.24.0.windows.2
+
+renuka_kulkarni@NGL000018 MINGW64 ~
+$ git config --global user.name "Renuka"
+
+renuka_kulkarni@NGL000018 MINGW64 ~
+$ git config --global user.email "renuka_kulkarni@persistent.com"
+
+renuka_kulkarni@NGL000018 MINGW64 ~
+$ git config --global core.editor "Notepad"
+
+renuka_kulkarni@NGL000018 MINGW64 ~
+$ git confi --list
+git: 'confi' is not a git command. See 'git --help'.
+
+The most similar command is
+        config
+
+renuka_kulkarni@NGL000018 MINGW64 ~
+$ git config --list
+http.sslcainfo=C:/Users/renuka_kulkarni/AppData/Local/Programs/Git/mingw64/ssl/certs/ca-bundle.crt
+http.sslbackend=openssl
+diff.astextplain.textconv=astextplain
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+credential.helper=manager
+add.interactive.usebuiltin=true
+user.name=Renuka
+user.email=renuka_kulkarni@persistent.com
+core.editor=Notepad
+
+renuka_kulkarni@NGL000018 MINGW64 ~
+$ cd d:
+
+renuka_kulkarni@NGL000018 MINGW64 /d
+$ cd Data
+
+renuka_kulkarni@NGL000018 MINGW64 /d/Data
+$ cd cd ~
+bash: cd: too many arguments
+
+renuka_kulkarni@NGL000018 MINGW64 /d/Data
+$ cd ..
+
+renuka_kulkarni@NGL000018 MINGW64 /d
+$ cd WebexTrainings/GitDemoGEMS4thAugBatch/
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch
+$ git init
+Initialized empty Git repository in D:/WebexTrainings/GitDemoGEMS4thAugBatch/.git/
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        File1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git add File1.txt
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   File1.txt
+
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git commit -m "WI1:file1 created, added welcome message!"
+[master (root-commit) a9cbf74] WI1:file1 created, added welcome message!
+ 1 file changed, 1 insertion(+)
+ create mode 100644 File1.txt
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   File1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git commit -am "WI1:file1 updated, added hello message!"
+[master c8d4440] WI1:file1 updated, added hello message!
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git log
+commit c8d4440b9f43d7bba5953fb2e30753bb6ed749b0 (HEAD -> master)
+Author: Renuka <renuka_kulkarni@persistent.com>
+Date:   Thu Sep 1 12:36:46 2022 +0530
+
+    WI1:file1 updated, added hello message!
+
+commit a9cbf7430a87afc5482004a904cfcd898ac814f6
+Author: Renuka <renuka_kulkarni@persistent.com>
+Date:   Thu Sep 1 12:34:11 2022 +0530
+
+    WI1:file1 created, added welcome message!
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        a.jar
+        file1.class
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        a.jar
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git commit -am "Adding gitIgnore file."
+On branch master
+Untracked files:
+        .gitignore
+
+nothing added to commit but untracked files present
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git add .
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git commit -m "Adding gitIgnore file."
+[master 15d438f] Adding gitIgnore file.
+ 1 file changed, 2 insertions(+)
+ create mode 100644 .gitignore
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git log
+commit 15d438f7dfe591813761ee4fba7a5c6924a62a05 (HEAD -> master)
+Author: Renuka <renuka_kulkarni@persistent.com>
+Date:   Thu Sep 1 12:47:18 2022 +0530
+
+    Adding gitIgnore file.
+
+commit c8d4440b9f43d7bba5953fb2e30753bb6ed749b0
+Author: Renuka <renuka_kulkarni@persistent.com>
+Date:   Thu Sep 1 12:36:46 2022 +0530
+
+    WI1:file1 updated, added hello message!
+
+commit a9cbf7430a87afc5482004a904cfcd898ac814f6
+Author: Renuka <renuka_kulkarni@persistent.com>
+Date:   Thu Sep 1 12:34:11 2022 +0530
+
+    WI1:file1 created, added welcome message!
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git log --oneline
+15d438f (HEAD -> master) Adding gitIgnore file.
+c8d4440 WI1:file1 updated, added hello message!
+a9cbf74 WI1:file1 created, added welcome message!
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git log -2 --oneline
+15d438f (HEAD -> master) Adding gitIgnore file.
+c8d4440 WI1:file1 updated, added hello message!
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git log -2
+commit 15d438f7dfe591813761ee4fba7a5c6924a62a05 (HEAD -> master)
+Author: Renuka <renuka_kulkarni@persistent.com>
+Date:   Thu Sep 1 12:47:18 2022 +0530
+
+    Adding gitIgnore file.
+
+commit c8d4440b9f43d7bba5953fb2e30753bb6ed749b0
+Author: Renuka <renuka_kulkarni@persistent.com>
+Date:   Thu Sep 1 12:36:46 2022 +0530
+
+    WI1:file1 updated, added hello message!
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git log --author="Renuka"
+commit 15d438f7dfe591813761ee4fba7a5c6924a62a05 (HEAD -> master)
+Author: Renuka <renuka_kulkarni@persistent.com>
+Date:   Thu Sep 1 12:47:18 2022 +0530
+
+    Adding gitIgnore file.
+
+commit c8d4440b9f43d7bba5953fb2e30753bb6ed749b0
+Author: Renuka <renuka_kulkarni@persistent.com>
+Date:   Thu Sep 1 12:36:46 2022 +0530
+
+    WI1:file1 updated, added hello message!
+
+commit a9cbf7430a87afc5482004a904cfcd898ac814f6
+Author: Renuka <renuka_kulkarni@persistent.com>
+Date:   Thu Sep 1 12:34:11 2022 +0530
+
+    WI1:file1 created, added welcome message!
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git log --author="Renuka" --oneline
+15d438f (HEAD -> master) Adding gitIgnore file.
+c8d4440 WI1:file1 updated, added hello message!
+a9cbf74 WI1:file1 created, added welcome message!
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git log --grep="WI1"
+commit c8d4440b9f43d7bba5953fb2e30753bb6ed749b0
+Author: Renuka <renuka_kulkarni@persistent.com>
+Date:   Thu Sep 1 12:36:46 2022 +0530
+
+    WI1:file1 updated, added hello message!
+
+commit a9cbf7430a87afc5482004a904cfcd898ac814f6
+Author: Renuka <renuka_kulkarni@persistent.com>
+Date:   Thu Sep 1 12:34:11 2022 +0530
+
+    WI1:file1 created, added welcome message!
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git log --grep="WI1" --oneline
+c8d4440 WI1:file1 updated, added hello message!
+a9cbf74 WI1:file1 created, added welcome message!
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git log --grep="add" --oneline
+c8d4440 WI1:file1 updated, added hello message!
+a9cbf74 WI1:file1 created, added welcome message!
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git log --since="01/09/2022"
+commit 15d438f7dfe591813761ee4fba7a5c6924a62a05 (HEAD -> master)
+Author: Renuka <renuka_kulkarni@persistent.com>
+Date:   Thu Sep 1 12:47:18 2022 +0530
+
+    Adding gitIgnore file.
+
+commit c8d4440b9f43d7bba5953fb2e30753bb6ed749b0
+Author: Renuka <renuka_kulkarni@persistent.com>
+Date:   Thu Sep 1 12:36:46 2022 +0530
+
+    WI1:file1 updated, added hello message!
+
+commit a9cbf7430a87afc5482004a904cfcd898ac814f6
+Author: Renuka <renuka_kulkarni@persistent.com>
+Date:   Thu Sep 1 12:34:11 2022 +0530
+
+    WI1:file1 created, added welcome message!
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git log --since="01/09/2022" --oneline
+15d438f (HEAD -> master) Adding gitIgnore file.
+c8d4440 WI1:file1 updated, added hello message!
+a9cbf74 WI1:file1 created, added welcome message!
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git log --help
+
