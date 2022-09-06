@@ -1,9 +1,10 @@
 Welcome to GIT Session!
-Hello World. How are you?
+Hello World. how are you?
 
 function A(){
 
-	Do fewthings to fix Bug1 & Bug 2.
-	New line for bug 2.
+	do fewthings to fix Bug1 & Bug 2
+	new line for bug 2
+	modified all 1st letters as small
 
 }
