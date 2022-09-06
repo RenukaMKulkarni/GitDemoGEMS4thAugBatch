@@ -1,2 +1,7 @@
 Welcome to GIT Session!
 Hello World, how are you?
+
+function A(){
+
+	Do something to fix Bug1
+}
