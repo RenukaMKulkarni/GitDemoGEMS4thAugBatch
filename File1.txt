@@ -1,9 +1,9 @@
 Welcome to GIT Session!
-Hello World, how are you?
+Hello World. How are you?
 
 function A(){
 
-	Do fewthings to fix Bug1 & Bug 2
-	New line for bug 2
+	Do fewthings to fix Bug1 & Bug 2.
+	New line for bug 2.
 
 }
