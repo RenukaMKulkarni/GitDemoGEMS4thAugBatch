@@ -8,4 +8,4 @@ function A(){
 	modified all 1st letters as small
 
 }
-Modified to check the remote Repo
+Modified to check the remote Repo...
