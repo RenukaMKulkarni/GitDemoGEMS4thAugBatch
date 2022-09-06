@@ -3,5 +3,7 @@ Hello World, how are you?
 
 function A(){
 
-	Do fewthings to fix Bug1
+	Do fewthings to fix Bug1 & Bug 2
+	New line for bug 2
+
 }
