@@ -1,0 +1,953 @@
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Day2Logs.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git add .
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git commit -m "Adding Day2Logs"
+[master c6cb7af] Adding Day2Logs
+ 1 file changed, 543 insertions(+)
+ create mode 100644 Day2Logs.txt
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git branch
+* master
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git branch Bug1
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git branch
+  Bug1
+* master
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git checkout Bug1
+Switched to branch 'Bug1'
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (Bug1)
+$ git branch
+* Bug1
+  master
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (Bug1)
+$ git status
+On branch Bug1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   File1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (Bug1)
+$ git log --oneline --decorate --graph
+* c6cb7af (HEAD -> Bug1, master) Adding Day2Logs
+* 41e71e6 Testing revert command. Revert "WI3:FileToBeDeleted has been added to test remove."
+* 474b01b (tag: V1.1) WI3:FileToBeDeleted has been removed due to XXX reason.
+* f0d9fb9 WI3:FileToBeDeleted has been added to test remove.
+* 7dc46d3 Adding a question to understand git commit without message.
+* 15d438f (tag: V1.0) Adding gitIgnore file.
+* c8d4440 WI1:file1 updated, added hello message!
+* a9cbf74 WI1:file1 created, added welcome message!
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (Bug1)
+$ git status
+On branch Bug1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   File1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (Bug1)
+$ git commit -am"Bug1:File1 updated to fix th bug1"
+[Bug1 fceaeac] Bug1:File1 updated to fix th bug1
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (Bug1)
+$ git status
+On branch Bug1
+nothing to commit, working tree clean
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (Bug1)
+$ git log --oneline --decorate --graph
+* fceaeac (HEAD -> Bug1) Bug1:File1 updated to fix th bug1
+* c6cb7af (master) Adding Day2Logs
+* 41e71e6 Testing revert command. Revert "WI3:FileToBeDeleted has been added to test remove."
+* 474b01b (tag: V1.1) WI3:FileToBeDeleted has been removed due to XXX reason.
+* f0d9fb9 WI3:FileToBeDeleted has been added to test remove.
+* 7dc46d3 Adding a question to understand git commit without message.
+* 15d438f (tag: V1.0) Adding gitIgnore file.
+* c8d4440 WI1:file1 updated, added hello message!
+* a9cbf74 WI1:file1 created, added welcome message!
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (Bug1)
+$ git checkout master
+Switched to branch 'master'
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git log --oneline --decorate --graph
+* c6cb7af (HEAD -> master) Adding Day2Logs
+* 41e71e6 Testing revert command. Revert "WI3:FileToBeDeleted has been added to test remove."
+* 474b01b (tag: V1.1) WI3:FileToBeDeleted has been removed due to XXX reason.
+* f0d9fb9 WI3:FileToBeDeleted has been added to test remove.
+* 7dc46d3 Adding a question to understand git commit without message.
+* 15d438f (tag: V1.0) Adding gitIgnore file.
+* c8d4440 WI1:file1 updated, added hello message!
+* a9cbf74 WI1:file1 created, added welcome message!
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git merge Bug1
+Updating c6cb7af..fceaeac
+Fast-forward
+ File1.txt | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git log --oneline --decorate --graph
+* fceaeac (HEAD -> master, Bug1) Bug1:File1 updated to fix th bug1
+* c6cb7af Adding Day2Logs
+* 41e71e6 Testing revert command. Revert "WI3:FileToBeDeleted has been added to test remove."
+* 474b01b (tag: V1.1) WI3:FileToBeDeleted has been removed due to XXX reason.
+* f0d9fb9 WI3:FileToBeDeleted has been added to test remove.
+* 7dc46d3 Adding a question to understand git commit without message.
+* 15d438f (tag: V1.0) Adding gitIgnore file.
+* c8d4440 WI1:file1 updated, added hello message!
+* a9cbf74 WI1:file1 created, added welcome message!
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git branch
+  Bug1
+* master
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git branch -d Bug1
+Deleted branch Bug1 (was fceaeac).
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git branch
+* master
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git log --oneline --decorate --graph
+* fceaeac (HEAD -> master) Bug1:File1 updated to fix th bug1
+* c6cb7af Adding Day2Logs
+* 41e71e6 Testing revert command. Revert "WI3:FileToBeDeleted has been added to test remove."
+* 474b01b (tag: V1.1) WI3:FileToBeDeleted has been removed due to XXX reason.
+* f0d9fb9 WI3:FileToBeDeleted has been added to test remove.
+* 7dc46d3 Adding a question to understand git commit without message.
+* 15d438f (tag: V1.0) Adding gitIgnore file.
+* c8d4440 WI1:file1 updated, added hello message!
+* a9cbf74 WI1:file1 created, added welcome message!
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git checkout -b Bug2
+Switched to a new branch 'Bug2'
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (Bug2)
+$ git log --oneline --decorate --graph
+* fceaeac (HEAD -> Bug2, master) Bug1:File1 updated to fix th bug1
+* c6cb7af Adding Day2Logs
+* 41e71e6 Testing revert command. Revert "WI3:FileToBeDeleted has been added to test remove."
+* 474b01b (tag: V1.1) WI3:FileToBeDeleted has been removed due to XXX reason.
+* f0d9fb9 WI3:FileToBeDeleted has been added to test remove.
+* 7dc46d3 Adding a question to understand git commit without message.
+* 15d438f (tag: V1.0) Adding gitIgnore file.
+* c8d4440 WI1:file1 updated, added hello message!
+* a9cbf74 WI1:file1 created, added welcome message!
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (Bug2)
+$ git commit -am "Bug2: File1 updated, added bug 2 in the end and 1 new line to check 3 way merge."
+[Bug2 f8326b6] Bug2: File1 updated, added bug 2 in the end and 1 new line to check 3 way merge.
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (Bug2)
+$ git log --oneline --decorate --graph                                                   * f8326b6 (HEAD -> Bug2) Bug2: File1 updated, added bug 2 in the end and 1 new line to check 3 way merge.
+* fceaeac (master) Bug1:File1 updated to fix th bug1
+* c6cb7af Adding Day2Logs
+* 41e71e6 Testing revert command. Revert "WI3:FileToBeDeleted has been added to test remove."
+* 474b01b (tag: V1.1) WI3:FileToBeDeleted has been removed due to XXX reason.
+* f0d9fb9 WI3:FileToBeDeleted has been added to test remove.
+* 7dc46d3 Adding a question to understand git commit without message.
+* 15d438f (tag: V1.0) Adding gitIgnore file.
+* c8d4440 WI1:file1 updated, added hello message!
+* a9cbf74 WI1:file1 created, added welcome message!
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (Bug2)
+$ git checkout master
+Switched to branch 'master'
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   File1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git log --oneline --decorate --graph
+* fceaeac (HEAD -> master) Bug1:File1 updated to fix th bug1
+* c6cb7af Adding Day2Logs
+* 41e71e6 Testing revert command. Revert "WI3:FileToBeDeleted has been added to test remove."
+* 474b01b (tag: V1.1) WI3:FileToBeDeleted has been removed due to XXX reason.
+* f0d9fb9 WI3:FileToBeDeleted has been added to test remove.
+* 7dc46d3 Adding a question to understand git commit without message.
+* 15d438f (tag: V1.0) Adding gitIgnore file.
+* c8d4440 WI1:file1 updated, added hello message!
+* a9cbf74 WI1:file1 created, added welcome message!
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git commit -am "CR1: File1 updated by my team member to study 3 way merge."            [master 79b9073] CR1: File1 updated by my team member to study 3 way merge.
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git log --oneline --decorate --graph
+* 79b9073 (HEAD -> master) CR1: File1 updated by my team member to study 3 way merge.
+* fceaeac Bug1:File1 updated to fix th bug1
+* c6cb7af Adding Day2Logs
+* 41e71e6 Testing revert command. Revert "WI3:FileToBeDeleted has been added to test remove."
+* 474b01b (tag: V1.1) WI3:FileToBeDeleted has been removed due to XXX reason.
+* f0d9fb9 WI3:FileToBeDeleted has been added to test remove.
+* 7dc46d3 Adding a question to understand git commit without message.
+* 15d438f (tag: V1.0) Adding gitIgnore file.
+* c8d4440 WI1:file1 updated, added hello message!
+* a9cbf74 WI1:file1 created, added welcome message!
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git merge Bug2
+Auto-merging File1.txt
+CONFLICT (content): Merge conflict in File1.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master|MERGING)
+$ git commit -am "Conflict: Resolved in File1 to study 3 way merge."                     [master 9b8eedf] Conflict: Resolved in File1 to study 3 way merge.
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git log --oneline --decorate --graph
+*   9b8eedf (HEAD -> master) Conflict: Resolved in File1 to study 3 way merge.
+|\
+| * f8326b6 (Bug2) Bug2: File1 updated, added bug 2 in the end and 1 new line to check 3 way merge.
+* | 79b9073 CR1: File1 updated by my team member to study 3 way merge.
+|/
+* fceaeac Bug1:File1 updated to fix th bug1
+* c6cb7af Adding Day2Logs
+* 41e71e6 Testing revert command. Revert "WI3:FileToBeDeleted has been added to test remove."
+* 474b01b (tag: V1.1) WI3:FileToBeDeleted has been removed due to XXX reason.
+* f0d9fb9 WI3:FileToBeDeleted has been added to test remove.
+* 7dc46d3 Adding a question to understand git commit without message.
+* 15d438f (tag: V1.0) Adding gitIgnore file.
+* c8d4440 WI1:file1 updated, added hello message!
+* a9cbf74 WI1:file1 created, added welcome message!
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git checkout -b CR2
+Switched to a new branch 'CR2'
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (CR2)
+$ git status
+On branch CR2
+nothing to commit, working tree clean
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (CR2)
+$ git log --oneline --decorate --graph
+*   9b8eedf (HEAD -> CR2, master) Conflict: Resolved in File1 to study 3 way merge.
+|\
+| * f8326b6 (Bug2) Bug2: File1 updated, added bug 2 in the end and 1 new line to check 3 way merge.
+* | 79b9073 CR1: File1 updated by my team member to study 3 way merge.
+|/
+* fceaeac Bug1:File1 updated to fix th bug1
+* c6cb7af Adding Day2Logs
+* 41e71e6 Testing revert command. Revert "WI3:FileToBeDeleted has been added to test remove."
+* 474b01b (tag: V1.1) WI3:FileToBeDeleted has been removed due to XXX reason.
+* f0d9fb9 WI3:FileToBeDeleted has been added to test remove.
+* 7dc46d3 Adding a question to understand git commit without message.
+* 15d438f (tag: V1.0) Adding gitIgnore file.
+* c8d4440 WI1:file1 updated, added hello message!
+* a9cbf74 WI1:file1 created, added welcome message!
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (CR2)
+$ git status
+On branch CR2
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   File1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (CR2)
+$ git commit -am "CR2: File1 updated for studying rebase with conflict."
+[CR2 d6de3ce] CR2: File1 updated for studying rebase with conflict.
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (CR2)
+$ git status
+On branch CR2
+nothing to commit, working tree clean
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (CR2)
+$ git log --oneline --decorate --graph
+* d6de3ce (HEAD -> CR2) CR2: File1 updated for studying rebase with conflict.
+*   9b8eedf (master) Conflict: Resolved in File1 to study 3 way merge.
+|\
+| * f8326b6 (Bug2) Bug2: File1 updated, added bug 2 in the end and 1 new line to check 3 way merge.
+* | 79b9073 CR1: File1 updated by my team member to study 3 way merge.
+|/
+* fceaeac Bug1:File1 updated to fix th bug1
+* c6cb7af Adding Day2Logs
+* 41e71e6 Testing revert command. Revert "WI3:FileToBeDeleted has been added to test remove."
+* 474b01b (tag: V1.1) WI3:FileToBeDeleted has been removed due to XXX reason.
+* f0d9fb9 WI3:FileToBeDeleted has been added to test remove.
+* 7dc46d3 Adding a question to understand git commit without message.
+* 15d438f (tag: V1.0) Adding gitIgnore file.
+* c8d4440 WI1:file1 updated, added hello message!
+* a9cbf74 WI1:file1 created, added welcome message!
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (CR2)
+$ git checkout master
+Switched to branch 'master'
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git log --oneline --decorate --graph
+*   9b8eedf (HEAD -> master) Conflict: Resolved in File1 to study 3 way merge.
+|\
+| * f8326b6 (Bug2) Bug2: File1 updated, added bug 2 in the end and 1 new line to check 3 way merge.
+* | 79b9073 CR1: File1 updated by my team member to study 3 way merge.
+|/
+* fceaeac Bug1:File1 updated to fix th bug1
+* c6cb7af Adding Day2Logs
+* 41e71e6 Testing revert command. Revert "WI3:FileToBeDeleted has been added to test remove."
+* 474b01b (tag: V1.1) WI3:FileToBeDeleted has been removed due to XXX reason.
+* f0d9fb9 WI3:FileToBeDeleted has been added to test remove.
+* 7dc46d3 Adding a question to understand git commit without message.
+* 15d438f (tag: V1.0) Adding gitIgnore file.
+* c8d4440 WI1:file1 updated, added hello message!
+* a9cbf74 WI1:file1 created, added welcome message!
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git commit -am "WI4: File1 updated, added fullstop, for studying rebase with conflict."
+[master 3d51545] WI4: File1 updated, added fullstop, for studying rebase with conflict.
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git log --oneline --decorate --graph                                                   * 3d51545 (HEAD -> master) WI4: File1 updated, added fullstop, for studying rebase with conflict.
+*   9b8eedf Conflict: Resolved in File1 to study 3 way merge.
+|\
+| * f8326b6 (Bug2) Bug2: File1 updated, added bug 2 in the end and 1 new line to check 3 way merge.
+* | 79b9073 CR1: File1 updated by my team member to study 3 way merge.
+|/
+* fceaeac Bug1:File1 updated to fix th bug1
+* c6cb7af Adding Day2Logs
+* 41e71e6 Testing revert command. Revert "WI3:FileToBeDeleted has been added to test remove."
+* 474b01b (tag: V1.1) WI3:FileToBeDeleted has been removed due to XXX reason.
+* f0d9fb9 WI3:FileToBeDeleted has been added to test remove.
+* 7dc46d3 Adding a question to understand git commit without message.
+* 15d438f (tag: V1.0) Adding gitIgnore file.
+* c8d4440 WI1:file1 updated, added hello message!
+* a9cbf74 WI1:file1 created, added welcome message!
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git checkout CR2
+Switched to branch 'CR2'
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (CR2)
+$ git log --oneline --decorate --graph
+* d6de3ce (HEAD -> CR2) CR2: File1 updated for studying rebase with conflict.
+*   9b8eedf Conflict: Resolved in File1 to study 3 way merge.
+|\
+| * f8326b6 (Bug2) Bug2: File1 updated, added bug 2 in the end and 1 new line to check 3 way merge.
+* | 79b9073 CR1: File1 updated by my team member to study 3 way merge.
+|/
+* fceaeac Bug1:File1 updated to fix th bug1
+* c6cb7af Adding Day2Logs
+* 41e71e6 Testing revert command. Revert "WI3:FileToBeDeleted has been added to test remove."
+* 474b01b (tag: V1.1) WI3:FileToBeDeleted has been removed due to XXX reason.
+* f0d9fb9 WI3:FileToBeDeleted has been added to test remove.
+* 7dc46d3 Adding a question to understand git commit without message.
+* 15d438f (tag: V1.0) Adding gitIgnore file.
+* c8d4440 WI1:file1 updated, added hello message!
+* a9cbf74 WI1:file1 created, added welcome message!
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (CR2)
+$ git rebase master
+First, rewinding head to replay your work on top of it...
+Applying: CR2: File1 updated for studying rebase with conflict.
+Using index info to reconstruct a base tree...
+M       File1.txt
+Falling back to patching base and 3-way merge...
+Auto-merging File1.txt
+CONFLICT (content): Merge conflict in File1.txt
+error: Failed to merge in the changes.
+hint: Use 'git am --show-current-patch' to see the failed patch
+Patch failed at 0001 CR2: File1 updated for studying rebase with conflict.
+Resolve all conflicts manually, mark them as resolved with
+"git add/rm <conflicted_files>", then run "git rebase --continue".
+You can instead skip this commit: run "git rebase --skip".
+To abort and get back to the state before "git rebase", run "git rebase --abort".
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (CR2|REBASE 1/1)
+$ git add .
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (CR2|REBASE 1/1)
+$ git status
+rebase in progress; onto 3d51545
+You are currently rebasing branch 'CR2' on '3d51545'.
+  (all conflicts fixed: run "git rebase --continue")
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   File1.txt
+
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (CR2|REBASE 1/1)
+$ git rebase --continue
+Applying: CR2: File1 updated for studying rebase with conflict.
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (CR2)
+$ git status
+On branch CR2
+nothing to commit, working tree clean
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (CR2)
+$ git log --oneline --decorate --graph
+* 81ece26 (HEAD -> CR2) CR2: File1 updated for studying rebase with conflict.
+* 3d51545 (master) WI4: File1 updated, added fullstop, for studying rebase with conflict.
+*   9b8eedf Conflict: Resolved in File1 to study 3 way merge.
+|\
+| * f8326b6 (Bug2) Bug2: File1 updated, added bug 2 in the end and 1 new line to check 3 way merge.
+* | 79b9073 CR1: File1 updated by my team member to study 3 way merge.
+|/
+* fceaeac Bug1:File1 updated to fix th bug1
+* c6cb7af Adding Day2Logs
+* 41e71e6 Testing revert command. Revert "WI3:FileToBeDeleted has been added to test remove."
+* 474b01b (tag: V1.1) WI3:FileToBeDeleted has been removed due to XXX reason.
+* f0d9fb9 WI3:FileToBeDeleted has been added to test remove.
+* 7dc46d3 Adding a question to understand git commit without message.
+* 15d438f (tag: V1.0) Adding gitIgnore file.
+* c8d4440 WI1:file1 updated, added hello message!
+* a9cbf74 WI1:file1 created, added welcome message!
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (CR2)
+$ git checkout master
+Switched to branch 'master'
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git log --oneline --decorate --graph
+* 3d51545 (HEAD -> master) WI4: File1 updated, added fullstop, for studying rebase with conflict.
+*   9b8eedf Conflict: Resolved in File1 to study 3 way merge.
+|\
+| * f8326b6 (Bug2) Bug2: File1 updated, added bug 2 in the end and 1 new line to check 3 way merge.
+* | 79b9073 CR1: File1 updated by my team member to study 3 way merge.
+|/
+* fceaeac Bug1:File1 updated to fix th bug1
+* c6cb7af Adding Day2Logs
+* 41e71e6 Testing revert command. Revert "WI3:FileToBeDeleted has been added to test remove."
+* 474b01b (tag: V1.1) WI3:FileToBeDeleted has been removed due to XXX reason.
+* f0d9fb9 WI3:FileToBeDeleted has been added to test remove.
+* 7dc46d3 Adding a question to understand git commit without message.
+* 15d438f (tag: V1.0) Adding gitIgnore file.
+* c8d4440 WI1:file1 updated, added hello message!
+* a9cbf74 WI1:file1 created, added welcome message!
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git merge CR2
+Updating 3d51545..81ece26
+Fast-forward
+ File1.txt | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git log --oneline --decorate --graph
+* 81ece26 (HEAD -> master, CR2) CR2: File1 updated for studying rebase with conflict.
+* 3d51545 WI4: File1 updated, added fullstop, for studying rebase with conflict.
+*   9b8eedf Conflict: Resolved in File1 to study 3 way merge.
+|\
+| * f8326b6 (Bug2) Bug2: File1 updated, added bug 2 in the end and 1 new line to check 3 way merge.
+* | 79b9073 CR1: File1 updated by my team member to study 3 way merge.
+|/
+* fceaeac Bug1:File1 updated to fix th bug1
+* c6cb7af Adding Day2Logs
+* 41e71e6 Testing revert command. Revert "WI3:FileToBeDeleted has been added to test remove."
+* 474b01b (tag: V1.1) WI3:FileToBeDeleted has been removed due to XXX reason.
+* f0d9fb9 WI3:FileToBeDeleted has been added to test remove.
+* 7dc46d3 Adding a question to understand git commit without message.
+* 15d438f (tag: V1.0) Adding gitIgnore file.
+* c8d4440 WI1:file1 updated, added hello message!
+* a9cbf74 WI1:file1 created, added welcome message!
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git remote
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git remote add origin https://github.com/RenukaMKulkarni/GitDemoGEMS4thAugBatch.git
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git remote
+origin
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git remote -v
+origin  https://github.com/RenukaMKulkarni/GitDemoGEMS4thAugBatch.git (fetch)
+origin  https://github.com/RenukaMKulkarni/GitDemoGEMS4thAugBatch.git (push)
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git push -u origin master
+Logon failed, use ctrl+c to cancel basic credential prompt.
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/RenukaMKulkarni/GitDemoGEMS4thAugBatch.git/'
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git push -u origin master
+Logon failed, use ctrl+c to cancel basic credential prompt.
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/RenukaMKulkarni/GitDemoGEMS4thAugBatch.git/'
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git remote add origin https://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@github.com/RenukaMKulkarni/GitDemoGEMS4thAugBatch.git
+fatal: remote origin already exists.
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git remote rm https://github.com/RenukaMKulkarni/GitDemoGEMS4thAugBatch.git
+fatal: No such remote: 'https://github.com/RenukaMKulkarni/GitDemoGEMS4thAugBatch.git'
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git remote rm origin
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git remote add origin https://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@github.com/RenukaMKulkarni/GitDemoGEMS4thAugBatch.git
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git remote -v
+origin  https://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@github.com/RenukaMKulkarni/GitDemoGEMS4thAugBatch.git (fetch)
+origin  https://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@github.com/RenukaMKulkarni/GitDemoGEMS4thAugBatch.git (push)
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git push -u origin master
+Enumerating objects: 41, done.
+Counting objects: 100% (41/41), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (34/34), done.
+Writing objects: 100% (41/41), 7.12 KiB | 173.00 KiB/s, done.
+Total 41 (delta 13), reused 0 (delta 0)
+remote: Resolving deltas: 100% (13/13), done.
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/RenukaMKulkarni/GitDemoGEMS4thAugBatch/pull/new/master
+remote:
+To https://github.com/RenukaMKulkarni/GitDemoGEMS4thAugBatch.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   File1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git push origin master
+Everything up-to-date
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   File1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git commit -am "Last commit."\
+>
+[master 9b91bd9] Last commit.
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 320 bytes | 80.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/RenukaMKulkarni/GitDemoGEMS4thAugBatch.git
+   81ece26..9b91bd9  master -> master
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git fetch
+remote: Enumerating objects: 8, done.
+remote: Counting objects: 100% (8/8), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 6 (delta 2), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (6/6), done.
+From https://github.com/RenukaMKulkarni/GitDemoGEMS4thAugBatch
+   9b91bd9..df83434  master     -> origin/master
+ * [new branch]      main       -> origin/main
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git push
+To https://github.com/RenukaMKulkarni/GitDemoGEMS4thAugBatch.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://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@github.com/RenukaMKulkarni/GitDemoGEMS4thAugBatch.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git status
+On branch master
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   File1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git pull
+error: Your local changes to the following files would be overwritten by merge:
+        File1.txt
+Please commit your changes or stash them before you merge.
+Aborting
+Updating 9b91bd9..df83434
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git pull --rebase
+error: cannot pull with rebase: You have unstaged changes.
+error: please commit or stash them.
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git status
+On branch master
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   File1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git add .
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git status
+On branch master
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   File1.txt
+
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git commit -m "Last commit be me."
+[master 7a8a4c5] Last commit be me.
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git pull
+Auto-merging File1.txt
+CONFLICT (content): Merge conflict in File1.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master|MERGING)
+$ git log --oneline --decorate --graph
+* 7a8a4c5 (HEAD -> master) Last commit be me.
+* 9b91bd9 Last commit.
+* 81ece26 (CR2) CR2: File1 updated for studying rebase with conflict.
+* 3d51545 WI4: File1 updated, added fullstop, for studying rebase with conflict.
+*   9b8eedf Conflict: Resolved in File1 to study 3 way merge.
+|\
+| * f8326b6 (Bug2) Bug2: File1 updated, added bug 2 in the end and 1 new line to check 3 way merge.
+* | 79b9073 CR1: File1 updated by my team member to study 3 way merge.
+|/
+* fceaeac Bug1:File1 updated to fix th bug1
+* c6cb7af Adding Day2Logs
+* 41e71e6 Testing revert command. Revert "WI3:FileToBeDeleted has been added to test remove."
+* 474b01b (tag: V1.1) WI3:FileToBeDeleted has been removed due to XXX reason.
+* f0d9fb9 WI3:FileToBeDeleted has been added to test remove.
+* 7dc46d3 Adding a question to understand git commit without message.
+* 15d438f (tag: V1.0) Adding gitIgnore file.
+* c8d4440 WI1:file1 updated, added hello message!
+* a9cbf74 WI1:file1 created, added welcome message!
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master|MERGING)
+$ git status
+On branch master
+Your branch and 'origin/master' have diverged,
+and have 1 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   File1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master|MERGING)
+$ git pull
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master|MERGING)
+$ git pull --rebase --continue
+error: unknown option `continue'
+usage: git pull [<options>] [<repository> [<refspec>...]]
+
+    -v, --verbose         be more verbose
+    -q, --quiet           be more quiet
+    --progress            force progress reporting
+    --recurse-submodules[=<on-demand>]
+                          control for recursive fetching of submodules
+
+Options related to merging
+    -r, --rebase[=(false|true|merges|preserve|interactive)]
+                          incorporate changes by rebasing rather than merging
+    -n                    do not show a diffstat at the end of the merge
+    --stat                show a diffstat at the end of the merge
+    --log[=<n>]           add (at most <n>) entries from shortlog to merge commit message
+    --signoff[=...]       add Signed-off-by:
+    --squash              create a single commit instead of doing a merge
+    --commit              perform a commit if the merge succeeds (default)
+    --edit                edit message before committing
+    --cleanup <mode>      how to strip spaces and #comments from message
+    --ff                  allow fast-forward
+    --ff-only             abort if fast-forward is not possible
+    --verify-signatures   verify that the named commit has a valid GPG signature
+    --autostash           automatically stash/stash pop before and after rebase
+    -s, --strategy <strategy>
+                          merge strategy to use
+    -X, --strategy-option <option=value>
+                          option for selected merge strategy
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+    --allow-unrelated-histories
+                          allow merging unrelated histories
+
+Options related to fetching
+    --all                 fetch from all remotes
+    -a, --append          append to .git/FETCH_HEAD instead of overwriting
+    --upload-pack <path>  path to upload pack on remote end
+    -f, --force           force overwrite of local branch
+    -t, --tags            fetch all tags and associated objects
+    -p, --prune           prune remote-tracking branches no longer on remote
+    -j, --jobs[=<n>]      number of submodules pulled in parallel
+    --dry-run             dry run
+    -k, --keep            keep downloaded pack
+    --depth <depth>       deepen history of shallow clone
+    --unshallow           convert to a complete repository
+    --update-shallow      accept refs that update .git/shallow
+    --refmap <refmap>     specify fetch refmap
+    -4, --ipv4            use IPv4 addresses only
+    -6, --ipv6            use IPv6 addresses only
+    --show-forced-updates
+                          check for forced-updates on all updated branches
+    --set-upstream        set upstream for git pull/fetch
+
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master|MERGING)
+$ git commit -m "Remote conflicts resolved."
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U       File1.txt
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master|MERGING)
+$ git status
+On branch master
+Your branch and 'origin/master' have diverged,
+and have 1 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   File1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master|MERGING)
+$ git add .
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master|MERGING)
+$ git status
+On branch master
+Your branch and 'origin/master' have diverged,
+and have 1 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+        modified:   File1.txt
+
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master|MERGING)
+$ git commit
+hint: Waiting for your editor to close the file... unix2dos: converting file D:/WebexTrainings/GitDemoGEMS4thAugBatch/.git/COMMIT_EDITMSG to DOS format...
+dos2unix: converting file D:/WebexTrainings/GitDemoGEMS4thAugBatch/.git/COMMIT_EDITMSG to Unix format...
+[master 51e214e] Resolved the remote conflicts
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git log --oneline --decorate --graph
+*   51e214e (HEAD -> master) Resolved the remote conflicts
+|\
+| * df83434 (origin/master) File1 updated by team member remotely
+* | 7a8a4c5 Last commit be me.
+|/
+* 9b91bd9 Last commit.
+* 81ece26 (CR2) CR2: File1 updated for studying rebase with conflict.
+* 3d51545 WI4: File1 updated, added fullstop, for studying rebase with conflict.
+*   9b8eedf Conflict: Resolved in File1 to study 3 way merge.
+|\
+| * f8326b6 (Bug2) Bug2: File1 updated, added bug 2 in the end and 1 new line to check 3 way merge.
+* | 79b9073 CR1: File1 updated by my team member to study 3 way merge.
+|/
+* fceaeac Bug1:File1 updated to fix th bug1
+* c6cb7af Adding Day2Logs
+* 41e71e6 Testing revert command. Revert "WI3:FileToBeDeleted has been added to test remove."
+* 474b01b (tag: V1.1) WI3:FileToBeDeleted has been removed due to XXX reason.
+* f0d9fb9 WI3:FileToBeDeleted has been added to test remove.
+* 7dc46d3 Adding a question to understand git commit without message.
+* 15d438f (tag: V1.0) Adding gitIgnore file.
+* c8d4440 WI1:file1 updated, added hello message!
+* a9cbf74 WI1:file1 created, added welcome message!
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$  git push
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 570 bytes | 63.00 KiB/s, done.
+Total 6 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas: 100% (4/4), completed with 2 local objects.
+To https://github.com/RenukaMKulkarni/GitDemoGEMS4thAugBatch.git
+   df83434..51e214e  master -> master
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+renuka_kulkarni@NGL000018 MINGW64 /d/WebexTrainings/GitDemoGEMS4thAugBatch (master)
+$ git log --oneline --decorate --graph
+*   51e214e (HEAD -> master, origin/master) Resolved the remote conflicts
+|\
+| * df83434 File1 updated by team member remotely
+* | 7a8a4c5 Last commit be me.
+|/
+* 9b91bd9 Last commit.
+* 81ece26 (CR2) CR2: File1 updated for studying rebase with conflict.
+* 3d51545 WI4: File1 updated, added fullstop, for studying rebase with conflict.
+*   9b8eedf Conflict: Resolved in File1 to study 3 way merge.
+|\
+| * f8326b6 (Bug2) Bug2: File1 updated, added bug 2 in the end and 1 new line to check 3 way merge.
+* | 79b9073 CR1: File1 updated by my team member to study 3 way merge.
+|/
+* fceaeac Bug1:File1 updated to fix th bug1
+* c6cb7af Adding Day2Logs
+* 41e71e6 Testing revert command. Revert "WI3:FileToBeDeleted has been added to test remove."
+* 474b01b (tag: V1.1) WI3:FileToBeDeleted has been removed due to XXX reason.
+* f0d9fb9 WI3:FileToBeDeleted has been added to test remove.
+* 7dc46d3 Adding a question to understand git commit without message.
+* 15d438f (tag: V1.0) Adding gitIgnore file.
+* c8d4440 WI1:file1 updated, added hello message!
+:
